@@ -17,6 +17,10 @@ backend/node_modules
 # next.js
 frontend/.next/
 /out/
+backend/dist/
+backend/.next/
+.next/
+backend/.nyc_output/
 
 # production
 /build

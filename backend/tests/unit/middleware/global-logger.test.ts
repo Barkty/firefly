@@ -1,5 +1,6 @@
 import sinon from 'sinon';
 import { Request, Response } from 'express';
+import { GlobalErrorCatcherMiddleware } from 'src/middleware/global-error-catcher.middleware';
 
 describe('GLOBAL ERROR MIDDLEWARE', () => {
   let mockReq: Partial<Request>;
