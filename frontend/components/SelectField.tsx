@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Spinner } from "@heroui/react";
 
 interface Option {
   label: string;
@@ -22,7 +23,6 @@ interface SelectFieldProps {
 }
 
 const SelectField: React.FC<SelectFieldProps> = ({
-  value,
   label,
   labelPosition = "left",
   textPosition = "left",
@@ -40,10 +40,6 @@ const SelectField: React.FC<SelectFieldProps> = ({
     value: "",
   });
 
-  const [currentOption, setCurrentOption] = useState<Option | null>(
-        () => selectOptions[0] ?? null
-    );
-
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
   const handleSelect = (option: Option) => {
@@ -51,21 +47,6 @@ const SelectField: React.FC<SelectFieldProps> = ({
     onChange?.(name, option.value);
     setShowOptions(false);
   };
-
-  // Set default option
-//   useEffect(() => {
-//     if (selectOptions.length > 0) {
-//       setCurrentOption(selectOptions[0]);
-//     }
-//   }, [selectOptions]);
-// const currentOption = selectOptions[0] ?? null;
-
-  // Sync when selected changes
-//   useEffect(() => {
-//     if (selectedOption) {
-//       setCurrentOption(selectedOption);
-//     }
-//   }, [selectedOption]);
 
   return (
     <>
@@ -110,10 +91,10 @@ const SelectField: React.FC<SelectFieldProps> = ({
                       : "md:text-left lg:text-left"
                   }`}
                 >
-                  {currentOption.label || "Select Option"}
+                  {selectedOption?.label || "Select Option"}
                 </p>
               ) : (
-                <LoadSpinner />
+                <Spinner size="md" />
               )}
             </div>
 

@@ -37,6 +37,7 @@ export function PokemonModal({ pokemon, onClose }: PokemonModalProps) {
     "dragon": Flame,
     // Add more type-icon mappings as needed
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const chipColors = ["primary", "secondary", "success", "warning", "danger", "info"];
 
   if (!pokemon) return null;

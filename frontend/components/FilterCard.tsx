@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { POKEMON_TYPES } from "@/lib/constants";
 import { Select, SelectItem } from "@heroui/react";
@@ -23,11 +24,6 @@ export function FilterCard() {
                     </div>
                     <ChevronDown color="black" />
                 </div>
-                {/* <Select className="max-w-xs bg-[grey]">
-                    {POKEMON_TYPES.map((animal) => (
-                        <SelectItem key={animal}>{animal}</SelectItem>
-                    ))}
-                </Select> */}
             </div>
             <div className="rounded-md p-4 w-[200px] flex justify-between items-center shadow-[0px_16px_21px_-5px_rgba(163,171,254,0.25)]">
                 <div className="w-2/3 flex">
