@@ -12,7 +12,7 @@
     "dev": "nodemon --exec ts-node ./src/index.ts --mode development",
     "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
     "format": "prettier --write \"./src/**/*.ts\" \"./tests/**/*.ts\"",
-    "test": "cross-env FIREFLY_NODE_ENV=test nyc mocha -r ts-node/register --extensions ts --file ./testSetup.ts --recursive --timeout=150000 \"tests/**/*.ts\" --exit",
+    "test": "cross-env FIREFLY_NODE_ENV=test NODE_OPTIONS='--require ts-node/register' nyc mocha",
     "docker:start": "docker-compose build && docker-compose up"
   },
   "dependencies": {
@@ -68,6 +68,7 @@
     "sinon-chai": "^4.0.1",
     "ts-loader": "^9.5.4",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
 }

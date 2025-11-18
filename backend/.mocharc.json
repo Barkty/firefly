@@ -1,0 +1,9 @@
+{
+  "require": ["ts-node/register"],
+  "extensions": ["ts", "tsx"],
+  "file": ["./testSetup.ts"],
+  "recursive": true,
+  "timeout": 150000,
+  "exit": true,
+  "spec": ["tests/index.ts"]
+}
